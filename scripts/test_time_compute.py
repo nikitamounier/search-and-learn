@@ -47,6 +47,9 @@ def main():
     num_gpus = torch.cuda.device_count()
     llm = LLM(
         model=config.model_path,
+        speculative_model=config.speculative_model_path,
+        num_speculative_tokens=config.num_speculative_tokens,
+        speculative_draft_tensor_parallel_size=config.speculative_draft_tensor_parallel_size,
         gpu_memory_utilization=config.gpu_memory_utilization,
         enable_prefix_caching=True,
         seed=config.seed,

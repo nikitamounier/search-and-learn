@@ -29,6 +29,12 @@ class Config:
         0.5  # vllm is allocated 0.5 of GPU memory, the PRM uses the rest
     )
     prm_path: str = "RLHFlow/Llama3.1-8B-PRM-Deepseek-Data"
+
+    # Speculative Decoding Options
+    speculative_model_path: str = "meta-llama/Llama-3.2-70B-Instruct"
+    num_speculative_tokens: int = 5
+    speculative_draft_tensor_parallel_size: int = 1
+
     # Output Related Options
     output_dir: str = None
     num_proc: int = None
